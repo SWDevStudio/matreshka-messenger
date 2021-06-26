@@ -1,25 +1,29 @@
 <template>
   <div class="app">
     <header class="app__header header-app">
-      <span class="icon-cros"/>
-      <span class="icon-subtract"/>
+      <span class="icon-cros" />
+      <span class="icon-subtract" />
       <span class="icon-logo"></span>
     </header>
-    <div class="app__body">
-      123
-    </div>
+    <aside-menu/>
   </div>
 </template>
 <script>
-export default {};
+import { defineComponent } from "vue";
+import AsideMenu from "@/components/aside-menu";
+export default defineComponent({
+  components: { AsideMenu }
+});
 </script>
 <style lang="scss">
 .app {
   display: grid;
   grid-template-columns: 90px 1fr;
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: 50px calc(100vh - 50px);
   min-width: 100vw;
   min-height: 100vh;
+  overflow: hidden;
+  background-color: $color-background;
   &__header {
     grid-column: 1 / 3;
     background-color: $color-background-header;
