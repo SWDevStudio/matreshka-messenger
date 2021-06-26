@@ -1,17 +1,40 @@
+// create class for padding and margin
+$gaps: (
+  pt: padding-top,
+  pb: padding-bottom,
+  pl: padding-left,
+  pr: padding-right,
+  mt: margin-top,
+  mb: margin-bottom,
+  mr: margin-right,
+  ml: margin-left,
+  m: margin,
+  p: padding
+);
+@each $key, $value in $gaps {
+  @for $i from 1 through 4 {
+    .#{$key}-#{$i} {
+      #{$value}: $i * 5px;
+    }
+  }
+}
+
 .text {
   font-size: 24px;
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
   font-family: $font-main;
   line-height: 27px;
   color: $color-text;
+
   &--bold {
     font-weight: bold;
   }
+
   &--black {
     color: $color-text--black;
   }
+
   &--important {
     color: $color-important;
   }
 }
-
