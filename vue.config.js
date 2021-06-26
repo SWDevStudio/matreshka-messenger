@@ -1,13 +1,12 @@
-
 module.exports = {
   css: {
     loaderOptions: {
       scss: {
+        prependData: '@import "@/assets/index.scss";'
       }
     }
   },
   pluginOptions: {
-
     // 'style-resources-loader': {
     //   preProcessor: 'scss',
     //   patterns: [
@@ -19,4 +18,4 @@ module.exports = {
     //   mainProcessWatch: ['src/scripts/server/*.ts']
     // }
   }
-}
+};
