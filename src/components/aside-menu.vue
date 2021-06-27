@@ -3,7 +3,10 @@
     <div class="aside-menu__group">
       <span class="icon-plus" />
       <span class="icon-star-line" />
-      <span class="icon-settings" />
+<!--      <router-link to="/">-->
+        <router-link class="icon-settings" :to="Routers.settings"/>
+<!--      </router-link>-->
+
       <span class="icon-search" />
     </div>
     <div class="aside-menu__group">
@@ -15,14 +18,19 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { Routers } from '@/data/Routers';
 
 export default defineComponent({
-  name: "aside-menu"
+  name: "aside-menu",
+  data: () => ({
+    Routers
+  })
 });
 </script>
 
 <style lang="scss">
 .aside-menu {
+  @include set-scrollbar();
   overflow: auto;
   max-height: 100%;
   background-color: $color-background-aside;
@@ -40,17 +48,6 @@ export default defineComponent({
     span {
       cursor: pointer;
     }
-  }
-  &::-webkit-scrollbar {
-    width: 3px;               /* ширина scrollbar */
-  }
-  &::-webkit-scrollbar-track {
-    background: transparent;        /* цвет дорожки */
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: $color-text;    /* цвет плашки */
-    border-radius: 20px;       /* закругления плашки */
-    border: 1px solid rgba(0, 0,0,0);  /* padding вокруг плашки */
   }
 }
 </style>
