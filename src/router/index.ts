@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Home from "@/views/Home.vue";
 import Settings from "@/views/Settings.vue";
-import { Routers } from "@/data/Routers";
+import { ROUTERS } from "@/data/ROUTERS";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -10,7 +10,7 @@ const routes: Array<RouteRecordRaw> = [
     component: Home
   },
   {
-    path: Routers.settings,
+    path: ROUTERS.settings,
     component: Settings
   },
   {

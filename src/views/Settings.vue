@@ -1,16 +1,16 @@
 <template>
   <div class="settings">
-    <header-page />
+    <page-header title="Настройки"/>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import HeaderPage from "@/components/header-page.vue";
+import PageHeader from "@/components/page-header.vue";
 
 export default defineComponent({
   name: "Settings",
-  components: { HeaderPage }
+  components: { PageHeader }
 });
 </script>
 

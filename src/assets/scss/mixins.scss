@@ -9,7 +9,6 @@
   margin-left: auto;
   margin-right: auto;
 }
-
 @mixin set-scrollbar() {
   &::-webkit-scrollbar {
     width: 3px;               /* ширина scrollbar */
@@ -22,4 +21,9 @@
     border-radius: 20px;       /* закругления плашки */
     border: 1px solid rgba(0, 0,0,0);  /* padding вокруг плашки */
   }
+}
+@mixin text($size, $weight: normal) {
+  font-family: $font-main;
+  font-weight: $weight;
+  font-size: $size;
 }

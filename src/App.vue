@@ -6,9 +6,9 @@
       <span class="icon-logo"></span>
     </header>
     <aside-menu/>
-    <router-view class="--wrapper"/>
+    <router-view/>
   </div>
-</template> c
+</template>
 <script>
 import { defineComponent } from "vue";
 import AsideMenu from "@/components/aside-menu";

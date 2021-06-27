@@ -4,7 +4,7 @@
       <span class="icon-plus" />
       <span class="icon-star-line" />
 <!--      <router-link to="/">-->
-        <router-link class="icon-settings" :to="Routers.settings"/>
+        <router-link class="icon-settings" :to="ROUTERS.settings"/>
 <!--      </router-link>-->
 
       <span class="icon-search" />
@@ -18,13 +18,13 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { Routers } from '@/data/Routers';
+import { ROUTERS } from '@/data/ROUTERS';
 
 export default defineComponent({
   name: "aside-menu",
   data: () => ({
-    Routers
-  })
+    ROUTERS
+  }),
 });
 </script>
 
