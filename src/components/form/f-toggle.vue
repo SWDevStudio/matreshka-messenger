@@ -24,14 +24,17 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+$width: 30;
+$height: 17.5;
 .f-toggle {
   box-sizing: border-box;
-  width: 30px;
-  height: 17.5px;
+  width: $width + px;
+  height: $height + px;
   border: 3px solid $color-toggle;
   border-radius: 25px;
   position: relative;
   cursor: pointer;
+
   &__swipe {
     transition: all 0.3s ease;
     position: absolute;

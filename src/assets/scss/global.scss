@@ -44,6 +44,10 @@ $gaps: (
   &--important {
     color: $color-important;
   }
+
+  &--small {
+    font-size: 18px;
+  }
 }
 .--wrapper {
   padding-left: 20px;

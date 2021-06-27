@@ -4,19 +4,11 @@
       <template v-slot:title>Настройки</template>
     </page-header>
     <div class="p-4 settings__blocks">
-      <setting-block title="Важное">
-        <div class="setting-block__item">
-          <span class="icon icon-logo"/>
-          <span class="text text--black">О проекте</span>
-        </div>
-      </setting-block>
-      <setting-block title="Основные">
-        <div class="setting-block__item">
-          <span class="icon icon-share"/>
-          <span class="text text--black">Режим offline</span>
-          <f-toggle class="ml-auto" v-model="test" />
-        </div>
-      </setting-block>
+      <setting-block
+        v-for="(setting, key) in SETTINGS"
+        :settings="setting"
+        :key="key"
+      />
     </div>
   </div>
 </template>
@@ -25,14 +17,14 @@
 import { defineComponent } from "vue";
 import PageHeader from "@/components/page-header.vue";
 import SettingBlock from "@/components/Settings/setting-block.vue";
-import FToggle from "@/components/form/f-toggle.vue";
+import { SETTINGS, SETTINGS } from "@/data/SETTINGS";
 
 export default defineComponent({
   name: "Settings",
-  components: { FToggle, SettingBlock, PageHeader },
+  components: { SettingBlock, PageHeader },
   data: () => ({
-    test: false
-  })
+    SETTINGS: SETTINGS as SETTINGS[]
+  }),
 });
 </script>
 

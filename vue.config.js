@@ -13,9 +13,9 @@ module.exports = {
     //     './src/assets/*.scss'
     //   ]
     // }
-    // electronBuilder: {
-    //   nodeIntegration: true,
-    //   mainProcessWatch: ['src/scripts/server/*.ts']
-    // }
+    electronBuilder: {
+      nodeIntegration: true,
+      mainProcessWatch: ['src/data/*.ts']
+    }
   }
 };

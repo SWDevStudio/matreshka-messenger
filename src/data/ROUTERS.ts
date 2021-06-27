@@ -4,5 +4,5 @@ export interface RoutersType {
 }
 
 export const ROUTERS: RoutersType = {
-  settings: "/Settings"
+  settings: "/settings"
 };
