@@ -1,7 +1,9 @@
 <template>
   <header class="header-page border-bottom">
     <span class="icon-arrow-left" v-if="arrow" />
-    <div class="header-page__title">{{ title }}</div>
+    <div class="header-page__title">
+      <slot name="title"></slot>
+    </div>
     <div class="header-page__panel">
       <slot name="icon-panel" />
     </div>
@@ -18,9 +20,6 @@ export default defineComponent({
       type: Boolean,
       default: true
     },
-    title: {
-      type: String
-    }
   }
 });
 </script>
@@ -33,7 +32,6 @@ export default defineComponent({
   grid-column-gap: 30px;
   color: $color-text--black;
   align-items: center;
-  //justify-items: center;
   @include text(24px);
 
   .icon-arrow-left {

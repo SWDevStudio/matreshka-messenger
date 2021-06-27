@@ -18,6 +18,13 @@ $gaps: (
     }
   }
 }
+@each $key, $value in $gaps {
+  @for $i from 1 through 4 {
+    .#{$key}-auto {
+      #{$value}: auto;
+    }
+  }
+}
 
 .text {
   font-size: 24px;
