@@ -3,6 +3,7 @@ import Home from "@/views/Home.vue";
 import Settings from "@/views/Settings.vue";
 import { ROUTERS } from "@/data/ROUTERS";
 import Wall from "@/views/Messages/Wall.vue";
+import Chat from "@/views/Messages/Chat.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -16,8 +17,11 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: ROUTERS.wall + '/:id',
-    name: 'wall',
     component: Wall
+  },
+  {
+    path: ROUTERS.chat + '/:messengerId/:id',
+    component: Chat
   }
   // {
   //   path: "/about",

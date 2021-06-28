@@ -44,7 +44,7 @@ export default defineComponent({
       @include icon-font-size(50px);
       cursor: pointer;
     }
-
+    align-items: center;
     justify-self: right;
 
     display: flex;

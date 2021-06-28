@@ -1,8 +1,8 @@
 <template>
   <router-link
-    to="/"
+    v-if="messageInfo?.userId"
+    :to="`${ROUTERS.chat}/${$route.params.id}/${messageInfo.userId}`"
     class="message-item pv-3 ph-4 border-bottom"
-    v-if="messageInfo"
   >
     <img :src="messageInfo.img" alt="" class="icon-user-logo" />
     <div class="message-item__info text">
@@ -26,9 +26,17 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { MessageItemProp } from "@/struct/components/wall/MessageItem";
+import { ROUTERS, RoutersType } from "@/data/ROUTERS";
+
+interface Data {
+  ROUTERS: RoutersType;
+}
 
 export default defineComponent({
   name: "MessageItem",
+  data: (): Data => ({
+    ROUTERS
+  }),
   props: {
     messageInfo: {
       type: Object as () => MessageItemProp,

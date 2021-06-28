@@ -28,7 +28,7 @@
 import { defineComponent } from "vue";
 import { NETWORKS, NetworksType } from "@/data/NETWORKS";
 import PageHeader from "@/components/page-header.vue";
-import MessageItem from "@/components/wall/message-item.vue";
+import MessageItem from "@/components/WallPage/message-item.vue";
 import { MessageItemProp } from "@/struct/components/wall/MessageItem";
 
 interface Data {
@@ -48,10 +48,12 @@ export default defineComponent({
           lastMessage: "Hello brother",
           lastTimeMessage: "11:53",
           unreadMessage: true,
+          userId: 1,
           img: "/img/icon-logo.png"
         },
         {
           userName: "Alina",
+          userId: 2,
           lastMessage: "How are you?",
           lastTimeMessage: "Вчера",
           unreadMessage: false,
