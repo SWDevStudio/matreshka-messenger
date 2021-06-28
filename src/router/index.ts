@@ -16,6 +16,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: ROUTERS.wall + '/:id',
+    name: 'wall',
     component: Wall
   }
   // {

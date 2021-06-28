@@ -32,7 +32,7 @@ import MessageItem from "@/components/wall/message-item.vue";
 import { MessageItemProp } from "@/struct/components/wall/MessageItem";
 
 interface Data {
-  NETWORK: NetworksType | null;
+  readonly NETWORK: NetworksType | null;
   messages: MessageItemProp[];
 }
 
@@ -41,7 +41,7 @@ export default defineComponent({
   components: { MessageItem, PageHeader },
   data(): Data {
     return {
-      NETWORK: null,
+      NETWORK: NETWORKS.find(i => i.id === ~~this.$route.params.id) || null,
       messages: [
         {
           userName: "Kotaro",
@@ -59,16 +59,6 @@ export default defineComponent({
         }
       ]
     };
-  },
-  created() {
-    this.NETWORK = NETWORKS.find(i => i.id === ~~this.$route.params.id) || null;
-    // this.NETWORK = null
-    // console.log(123);
-  },
-  watch: {
-    "$route.params.id"() {
-      this.$forceUpdate();
-    }
   }
 });
 </script>

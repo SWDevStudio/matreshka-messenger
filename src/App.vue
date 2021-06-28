@@ -6,7 +6,7 @@
       <span class="icon-logo"></span>
     </header>
     <aside-menu/>
-    <router-view/>
+    <router-view :key="$route.params"/>
   </div>
 </template>
 <script>
