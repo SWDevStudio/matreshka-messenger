@@ -19,12 +19,12 @@ export interface SettingRange extends SettingBlock {
   range: number;
 }
 
-export interface SETTINGS {
+export interface Setting {
   title: string;
   blocks: SettingBlockLink[] | SettingBlockToggle[] | SettingSelect[] | SettingRange[]
 }
 
-export const SETTINGS: SETTINGS[] = [
+export const SETTINGS: Setting[] = [
   {
     title: "Важное",
     blocks: [

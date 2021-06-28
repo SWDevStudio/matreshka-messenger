@@ -1,7 +1,7 @@
 <template>
   <header class="header-page border-bottom">
     <span class="icon-arrow-left" v-if="arrow" />
-    <div class="header-page__title">
+    <div class="header-page__title" :style="!arrow ? 'grid-column: 1/3' : ''">
       <slot name="title"></slot>
     </div>
     <div class="header-page__panel">
@@ -19,7 +19,7 @@ export default defineComponent({
     arrow: {
       type: Boolean,
       default: true
-    },
+    }
   }
 });
 </script>
@@ -38,14 +38,17 @@ export default defineComponent({
     @include icon-font-size(50px);
     cursor: pointer;
   }
+
   &__panel {
     span {
       @include icon-font-size(50px);
       cursor: pointer;
     }
+
     justify-self: right;
+
     display: flex;
-    gap: 5px
+    gap: 5px;
   }
 }
 </style>

@@ -49,6 +49,16 @@ $gaps: (
     font-size: 18px;
   }
 }
+.icon-logo {
+  display: block;
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  &--small {
+    width: 50px;
+    height: 50px;
+  }
+}
 .--wrapper {
   padding-left: 20px;
   padding-right: 20px;

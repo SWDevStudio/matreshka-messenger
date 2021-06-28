@@ -17,13 +17,13 @@
 import { defineComponent } from "vue";
 import PageHeader from "@/components/page-header.vue";
 import SettingBlock from "@/components/Settings/setting-block.vue";
-import { SETTINGS, SETTINGS } from "@/data/SETTINGS";
+import { SETTINGS, Setting } from "@/data/SETTING";
 
 export default defineComponent({
   name: "Settings",
   components: { SettingBlock, PageHeader },
   data: () => ({
-    SETTINGS: SETTINGS as SETTINGS[]
+    SETTINGS: SETTINGS as Setting[]
   }),
 });
 </script>

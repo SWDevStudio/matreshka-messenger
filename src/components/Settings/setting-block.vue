@@ -25,14 +25,14 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import FToggle from "@/components/form/f-toggle.vue";
-import { SETTINGS } from "@/data/SETTINGS";
+import { Setting } from "@/data/SETTING";
 
 export default defineComponent({
   name: "SettingBlock",
   components: { FToggle },
   props: {
     settings: {
-      type: Object as () => SETTINGS
+      type: Object as () => Setting
     }
   }
 });

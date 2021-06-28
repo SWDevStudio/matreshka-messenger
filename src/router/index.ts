@@ -2,6 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Home from "@/views/Home.vue";
 import Settings from "@/views/Settings.vue";
 import { ROUTERS } from "@/data/ROUTERS";
+import Wall from "@/views/Messages/Wall.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -14,11 +15,15 @@ const routes: Array<RouteRecordRaw> = [
     component: Settings
   },
   {
-    path: "/about",
-    name: "About",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
+    path: ROUTERS.wall + '/:id',
+    component: Wall
   }
+  // {
+  //   path: "/about",
+  //   name: "About",
+  //   component: () =>
+  //     import(/* webpackChunkName: "about" */ "../views/About.vue")
+  // }
 ];
 
 const router = createRouter({
