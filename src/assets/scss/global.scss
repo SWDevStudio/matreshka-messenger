@@ -11,6 +11,14 @@ $gaps: (
   m: margin,
   p: padding
 );
+$gaps-vertical: (
+  pv: padding,
+  mv: margin,
+);
+$gaps-horizontal: (
+  ph: padding,
+  mh: margin
+);
 @each $key, $value in $gaps {
   @for $i from 1 through 4 {
     .#{$key}-#{$i} {
@@ -18,6 +26,32 @@ $gaps: (
     }
   }
 }
+@each $key, $value in $gaps {
+  @for $i from 1 through 4 {
+    .#{$key}-#{$i} {
+      #{$value}: $i * 5px;
+    }
+  }
+}
+
+
+@each $key, $value in $gaps-horizontal {
+  @for $i from 1 through 4 {
+    .#{$key}-#{$i} {
+      #{$value}-left: $i * 5px;
+      #{$value}-right: $i * 5px;
+    }
+  }
+}
+@each $key, $value in $gaps-vertical {
+  @for $i from 1 through 4 {
+    .#{$key}-#{$i} {
+      #{$value}-top: $i * 5px;
+      #{$value}-bottom: $i * 5px;
+    }
+  }
+}
+
 @each $key, $value in $gaps {
   @for $i from 1 through 4 {
     .#{$key}-auto {
@@ -32,7 +66,9 @@ $gaps: (
   font-family: $font-main;
   line-height: 27px;
   color: $color-text;
-
+  .icon {
+    @include icon-font-size(24px);
+  }
   &--bold {
     font-weight: bold;
   }
@@ -49,23 +85,28 @@ $gaps: (
     font-size: 18px;
   }
 }
+
 .icon-logo {
   display: block;
   width: 70px;
   height: 70px;
   border-radius: 100%;
+
   &--small {
     width: 50px;
     height: 50px;
   }
 }
+
 .--wrapper {
   padding-left: 20px;
   padding-right: 20px;
 }
+
 .border-bottom {
   border-bottom: 1px solid $color-border;
 }
+
 .border-top {
   border-top: 1px solid $color-border;
 }

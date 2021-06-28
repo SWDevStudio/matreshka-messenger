@@ -11,5 +11,11 @@ export const NETWORKS: NetworksType[] = [
     shortName: "vk",
     icon: "icon-vk-circle",
     id: 1
+  },
+  {
+    name: "facebook",
+    shortName: "facebook",
+    icon: "icon-facebook-circle",
+    id: 2
   }
 ];

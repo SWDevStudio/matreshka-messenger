@@ -15,7 +15,7 @@ module.exports = {
     // }
     electronBuilder: {
       nodeIntegration: true,
-      mainProcessWatch: ['src/data/*.ts']
+      mainProcessWatch: ['./src/**/*.ts']
     }
   }
 };
