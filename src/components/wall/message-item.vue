@@ -1,23 +1,26 @@
 <template>
-  <div class="message-item pv-3 ph-4 border-bottom" v-if="messageInfo">
-    <img :src="messageInfo.img" alt="" class="icon-logo" />
+  <router-link
+    to="/"
+    class="message-item pv-3 ph-4 border-bottom"
+    v-if="messageInfo"
+  >
+    <img :src="messageInfo.img" alt="" class="icon-user-logo" />
     <div class="message-item__info text">
       <div class="message-item__user-info">
-        <span class="text--black">{{messageInfo.userName}}</span>
-        <span class="icon icon-volume-mute text--important"/>
+        <span class="text--black">{{ messageInfo.userName }}</span>
+        <span class="icon icon-volume-mute text--important" />
       </div>
       <div class="message-item__user-info">
-        <span class="message-item__circle" v-if="messageInfo.unreadMessage"/>
+        <span class="message-item__circle" v-if="messageInfo.unreadMessage" />
         <span class="text">
-          {{messageInfo.lastTimeMessage}}
+          {{ messageInfo.lastTimeMessage }}
         </span>
       </div>
-
     </div>
     <div class="text text--black text--small">
-      {{messageInfo.lastMessage}}
+      {{ messageInfo.lastMessage }}
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script lang="ts">
@@ -29,7 +32,7 @@ export default defineComponent({
   props: {
     messageInfo: {
       type: Object as () => MessageItemProp,
-      required: true,
+      required: true
     }
   }
 });
@@ -62,7 +65,7 @@ export default defineComponent({
     background-color: $color-important;
   }
 
-  .icon-logo {
+  .icon-user-logo {
     grid-row: 1 / 3;
   }
 }

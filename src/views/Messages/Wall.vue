@@ -10,7 +10,7 @@
         <img
           src="/img/icon-logo.png"
           alt="icon-logo"
-          class="icon-logo icon-logo--small"
+          class="icon-user-logo icon-logo--small"
         />
       </template>
     </page-header>
