@@ -4,6 +4,7 @@ import Settings from "@/views/Settings.vue";
 import { ROUTERS } from "@/data/ROUTERS";
 import Wall from "@/views/Messages/Wall.vue";
 import Chat from "@/views/Messages/Chat.vue";
+import Login from "@/views/Login.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -22,6 +23,10 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: ROUTERS.chat + '/:messengerId/:id',
     component: Chat
+  },
+  {
+    path: ROUTERS.login,
+    component: Login
   }
   // {
   //   path: "/about",

@@ -1,7 +1,7 @@
 <template>
   <div class="aside-menu">
     <div class="aside-menu__group">
-      <span class="icon-plus" />
+      <router-link class="icon-plus" :to="ROUTERS.login" />
       <span class="icon-star-line" />
       <!--      <router-link to="/">-->
       <router-link class="icon-settings" :to="ROUTERS.settings" />

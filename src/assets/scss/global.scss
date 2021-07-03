@@ -61,7 +61,7 @@ $gaps-horizontal: (
 }
 
 // flex gap
-  @for $i from 1 through 4 {
+  @for $i from 1 through 8 {
     .gap-#{$i} {
       gap: $i * 5px;
     }
@@ -131,5 +131,10 @@ $gaps-horizontal: (
 .align {
   &-center {
     align-items: center;
+  }
+}
+.justify {
+  &-center {
+    justify-content: center;
   }
 }

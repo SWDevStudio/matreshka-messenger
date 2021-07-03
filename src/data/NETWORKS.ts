@@ -13,7 +13,7 @@ export const NETWORKS: NetworksType[] = [
     id: 1
   },
   {
-    name: "facebook",
+    name: "Facebook",
     shortName: "facebook",
     icon: "icon-facebook-circle",
     id: 2
