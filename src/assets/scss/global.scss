@@ -60,6 +60,13 @@ $gaps-horizontal: (
   }
 }
 
+// flex gap
+  @for $i from 1 through 4 {
+    .gap-#{$i} {
+      gap: $i * 5px;
+    }
+  }
+
 .text {
   font-size: 24px;
   letter-spacing: 0.05em;
@@ -85,7 +92,11 @@ $gaps-horizontal: (
     font-size: 18px;
   }
 }
-
+.icon {
+  width: 50px;
+  font-size: 50px;
+  color: $color-text--black;
+}
 .icon-user-logo {
   display: block;
   width: 70px;
@@ -109,4 +120,16 @@ $gaps-horizontal: (
 
 .border-top {
   border-top: 1px solid $color-border;
+}
+
+.d-flex {
+  display: flex;
+}
+.flex-basis-100 {
+  flex-basis: 100%;
+}
+.align {
+  &-center {
+    align-items: center;
+  }
 }

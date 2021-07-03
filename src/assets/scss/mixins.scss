@@ -16,15 +16,15 @@
   margin-top: auto;
   margin-bottom: auto;
 }
-@mixin set-scrollbar() {
+@mixin set-scrollbar($width: 3px, $color: $color-text) {
   &::-webkit-scrollbar {
-    width: 3px;               /* ширина scrollbar */
+    width: $width;               /* ширина scrollbar */
   }
   &::-webkit-scrollbar-track {
     background: transparent;        /* цвет дорожки */
   }
   &::-webkit-scrollbar-thumb {
-    background-color: $color-text;    /* цвет плашки */
+    background-color: $color;    /* цвет плашки */
     border-radius: 20px;       /* закругления плашки */
     border: 1px solid rgba(0, 0,0,0);  /* padding вокруг плашки */
   }
