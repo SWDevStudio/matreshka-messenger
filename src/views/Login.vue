@@ -3,18 +3,34 @@
     <header class="login__header border-bottom pv-4">
       Добавить новый аккаунт
     </header>
-    <network-list class="login__networks"/>
+    <network-list
+      ref="networkList"
+      class="login__networks"
+      @change="setNetwork"
+      v-if="!selectNetwork"
+    />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
 import NetworkList from "@/components/Login/network-list.vue";
+import { NetworksType } from "@/data/NETWORKS";
+import { Vue, Options } from "vue-class-component";
+import { Ref } from "vue-property-decorator";
 
-export default defineComponent({
+@Options({
   name: "login",
   components: { NetworkList }
-});
+})
+export default class Login extends Vue {
+  selectNetwork: NetworksType | null = null;
+
+  setNetwork(network: NetworksType): void {
+    this.selectNetwork = network;
+  }
+
+  @Ref() networkList!: NetworkList;
+}
 </script>
 
 <style lang="scss">
@@ -26,6 +42,4 @@ export default defineComponent({
     border-bottom: 1px solid #7a7a7a;
   }
 }
-
-
 </style>
