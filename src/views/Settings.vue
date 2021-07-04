@@ -14,18 +14,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
 import PageHeader from "@/components/page-header.vue";
 import SettingBlock from "@/components/Settings/setting-block.vue";
 import { SETTINGS, Setting } from "@/data/SETTING";
+import { Options, Vue } from "vue-class-component";
 
-export default defineComponent({
+@Options({
   name: "Settings",
-  components: { SettingBlock, PageHeader },
-  data: () => ({
-    SETTINGS: SETTINGS as Setting[]
-  }),
-});
+  components: { SettingBlock, PageHeader }
+})
+export default class Settings extends Vue {
+  SETTINGS: Setting[] = SETTINGS;
+}
 </script>
 
 <style lang="scss">

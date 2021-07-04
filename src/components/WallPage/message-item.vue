@@ -24,26 +24,26 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
 import { MessageItemProp } from "@/struct/components/wall/MessageItem";
 import { ROUTERS, RoutersType } from "@/data/ROUTERS";
+import { Options, Vue } from "vue-class-component";
+import { Prop } from "vue-property-decorator";
 
-interface Data {
-  ROUTERS: RoutersType;
+@Options({
+  name: "MessageItem"
+})
+export default class MessageItem extends Vue {
+  //Store state-getters
+  //Prop
+  @Prop() messageInfo!: MessageItemProp;
+  //Data
+  readonly ROUTERS: RoutersType = ROUTERS;
+  //Computed
+  //Ref
+  //Hooks
+  //Store actions-mutation
+  //Methods
 }
-
-export default defineComponent({
-  name: "MessageItem",
-  data: (): Data => ({
-    ROUTERS
-  }),
-  props: {
-    messageInfo: {
-      type: Object as () => MessageItemProp,
-      required: true
-    }
-  }
-});
 </script>
 
 <style lang="scss">

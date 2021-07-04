@@ -23,19 +23,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
 import FToggle from "@/components/form/f-toggle.vue";
 import { Setting } from "@/data/SETTING";
+import { Options, Vue } from "vue-class-component";
+import { Prop } from "vue-property-decorator";
+@Options({
+  name: 'SettingBlock',
+  components: {FToggle}
+})
+export default class SettingBlock extends Vue {
+  @Prop() settings?: Setting
+}
 
-export default defineComponent({
-  name: "SettingBlock",
-  components: { FToggle },
-  props: {
-    settings: {
-      type: Object as () => Setting
-    }
-  }
-});
 </script>
 
 <style lang="scss">

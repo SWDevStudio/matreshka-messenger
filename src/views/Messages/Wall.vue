@@ -25,44 +25,38 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
 import { NETWORKS, NetworksType } from "@/data/NETWORKS";
 import PageHeader from "@/components/page-header.vue";
 import MessageItem from "@/components/WallPage/message-item.vue";
 import { MessageItemProp } from "@/struct/components/wall/MessageItem";
+import { Options, Vue } from "vue-class-component";
 
-interface Data {
-  readonly NETWORK: NetworksType | null;
-  messages: MessageItemProp[];
-}
-
-export default defineComponent({
+@Options({
   name: "Wall",
-  components: { MessageItem, PageHeader },
-  data(): Data {
-    return {
-      NETWORK: NETWORKS.find(i => i.id === ~~this.$route.params.id) || null,
-      messages: [
-        {
-          userName: "Kotaro",
-          lastMessage: "Hello brother",
-          lastTimeMessage: "11:53",
-          unreadMessage: true,
-          userId: 1,
-          img: "/img/icon-logo.png"
-        },
-        {
-          userName: "Alina",
-          userId: 2,
-          lastMessage: "How are you?",
-          lastTimeMessage: "Вчера",
-          unreadMessage: false,
-          img: "/img/icon-logo.png"
-        }
-      ]
-    };
-  }
-});
+  components: { MessageItem, PageHeader }
+})
+export default class Wall extends Vue {
+  NETWORK: NetworksType | null =
+    NETWORKS.find(i => i.id === ~~this.$route.params.id) || null;
+  messages: MessageItemProp[] = [
+    {
+      userName: "Kotaro",
+      lastMessage: "Hello brother",
+      lastTimeMessage: "11:53",
+      unreadMessage: true,
+      userId: 1,
+      img: "/img/icon-logo.png"
+    },
+    {
+      userName: "Alina",
+      userId: 2,
+      lastMessage: "How are you?",
+      lastTimeMessage: "Вчера",
+      unreadMessage: false,
+      img: "/img/icon-logo.png"
+    }
+  ];
+}
 </script>
 
 <style lang="scss"></style>

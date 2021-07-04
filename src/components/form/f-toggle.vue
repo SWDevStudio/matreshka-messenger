@@ -11,16 +11,17 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
 
-export default defineComponent({
+import { Options, Vue } from "vue-class-component";
+import { Prop } from "vue-property-decorator";
+
+@Options({
   name: "FToggle",
-  props: {
-    modelValue: {
-      type: Boolean
-    }
-  }
-});
+})
+export default class FToggle extends Vue {
+  @Prop() modelValue?: boolean
+}
+
 </script>
 
 <style lang="scss">

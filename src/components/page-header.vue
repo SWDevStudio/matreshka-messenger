@@ -11,17 +11,16 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { Options, Vue } from "vue-class-component";
+import {Prop} from "vue-property-decorator";
 
-export default defineComponent({
-  name: "PageHeader",
-  props: {
-    arrow: {
-      type: Boolean,
-      default: true
-    }
-  }
-});
+@Options({
+  name: "PageHeader"
+})
+export default class PageHeader extends Vue {
+  @Prop({ default: true}) arrow!: boolean
+}
+
 </script>
 
 <style lang="scss">

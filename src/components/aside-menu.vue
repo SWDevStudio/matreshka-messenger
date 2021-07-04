@@ -21,22 +21,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
 import { ROUTERS, RoutersType } from "@/data/ROUTERS";
 import { NETWORKS, NetworksType } from "@/data/NETWORKS";
+import { Vue } from "vue-class-component";
 
-interface Data {
-  ROUTERS: RoutersType;
-  NETWORKS: NetworksType[];
+export default class AsideMenu extends Vue {
+  readonly ROUTERS: RoutersType = ROUTERS
+  readonly NETWORKS: NetworksType[] = NETWORKS
 }
 
-export default defineComponent({
-  name: "aside-menu",
-  data: (): Data => ({
-    ROUTERS,
-    NETWORKS
-  })
-});
 </script>
 
 <style lang="scss">

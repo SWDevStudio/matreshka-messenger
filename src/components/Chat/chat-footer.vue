@@ -10,13 +10,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
 import InputWrapper from "@/components/form/input-wrapper.vue";
+import { Options, Vue } from "vue-class-component";
 
-export default defineComponent({
+@Options({
   name: "ChatFooter",
   components: { InputWrapper }
-});
+})
+export default class ChatFooter extends Vue {}
 </script>
 
 <style lang="scss">

@@ -29,13 +29,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
 import PageHeader from "@/components/page-header.vue";
 import ChatFooter from "@/components/Chat/chat-footer.vue";
-export default defineComponent({
+import { Options, Vue } from "vue-class-component";
+@Options({
   name: "Chat",
   components: { PageHeader, ChatFooter }
-});
+})
+export default class Chat extends Vue {}
 </script>
 
 <style lang="scss">

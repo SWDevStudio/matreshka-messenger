@@ -25,11 +25,11 @@ import { Ref } from "vue-property-decorator";
 export default class Login extends Vue {
   selectNetwork: NetworksType | null = null;
 
+  @Ref() networkList!: NetworkList;
+
   setNetwork(network: NetworksType): void {
     this.selectNetwork = network;
   }
-
-  @Ref() networkList!: NetworkList;
 }
 </script>
 

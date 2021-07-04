@@ -5,14 +5,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-
-export default defineComponent({
+import { Options, Vue } from "vue-class-component";
+@Options({
   name: "InputWrapper",
-  props: {
-    type: {}
-  }
-});
+})
+export default class InputWrapper extends Vue {
+}
 </script>
 
 <style lang="scss">
