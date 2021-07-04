@@ -1,6 +1,6 @@
 <template>
   <div class="wall">
-    <page-header :arrow="false">
+    <page-header :arrow="false" v-if="NETWORK">
       <template v-slot:title>
         {{ NETWORK.name }}
       </template>
@@ -36,8 +36,7 @@ import { Options, Vue } from "vue-class-component";
   components: { MessageItem, PageHeader }
 })
 export default class Wall extends Vue {
-  NETWORK: NetworksType | null =
-    NETWORKS.find(i => i.id === ~~this.$route.params.id) || null;
+  NETWORK: NetworksType | null = null
   messages: MessageItemProp[] = [
     {
       userName: "Kotaro",
@@ -56,6 +55,9 @@ export default class Wall extends Vue {
       img: "/img/icon-logo.png"
     }
   ];
+  beforeCreate(): void {
+    this.NETWORK = NETWORKS.find(i => i.id === ~~this.$route.params?.id) || null;
+  }
 }
 </script>
 
