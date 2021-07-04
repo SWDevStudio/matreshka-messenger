@@ -20,14 +20,14 @@ $gaps-horizontal: (
   mh: margin
 );
 @each $key, $value in $gaps {
-  @for $i from 1 through 4 {
+  @for $i from 1 through 12 {
     .#{$key}-#{$i} {
       #{$value}: $i * 5px;
     }
   }
 }
 @each $key, $value in $gaps {
-  @for $i from 1 through 4 {
+  @for $i from 1 through 12 {
     .#{$key}-#{$i} {
       #{$value}: $i * 5px;
     }
@@ -36,7 +36,7 @@ $gaps-horizontal: (
 
 
 @each $key, $value in $gaps-horizontal {
-  @for $i from 1 through 4 {
+  @for $i from 1 through 12 {
     .#{$key}-#{$i} {
       #{$value}-left: $i * 5px;
       #{$value}-right: $i * 5px;
@@ -44,7 +44,7 @@ $gaps-horizontal: (
   }
 }
 @each $key, $value in $gaps-vertical {
-  @for $i from 1 through 4 {
+  @for $i from 1 through 12 {
     .#{$key}-#{$i} {
       #{$value}-top: $i * 5px;
       #{$value}-bottom: $i * 5px;
@@ -52,8 +52,8 @@ $gaps-horizontal: (
   }
 }
 
-@each $key, $value in $gaps {
-  @for $i from 1 through 4 {
+@each $key, $value in $gaps-vertical {
+  @for $i from 1 through 1 {
     .#{$key}-auto {
       #{$value}: auto;
     }
@@ -136,5 +136,31 @@ $gaps-horizontal: (
 .justify {
   &-center {
     justify-content: center;
+  }
+}
+.btn {
+
+  text-align: center;
+  font-size: 24px;
+  font-family: $font-main;
+  color: $color-text--black;
+  line-height: 27px;
+  background-color: $color-important;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: .3s ease-in-out;
+  &:hover {
+    box-shadow: 0px 0px 17px #FF959C;
+  }
+  &:active {
+    box-shadow: inset 0px 5px 5px rgba(64, 0, 0, 0.25);
+  }
+  &:disabled {
+    background-color:  #ECECEB;
+    cursor: not-allowed;
+    &:hover {
+      box-shadow: none;
+    }
   }
 }

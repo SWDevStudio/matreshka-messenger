@@ -16,11 +16,12 @@ export default class InputWrapper extends Vue {
 <style lang="scss">
 
 .input-wrapper {
+  height: 40px;
   input {
     font-family: $font-main;
     box-sizing: border-box;
     width: 100%;
-    height: 40px;
+    height: 100%;
     border-radius: 25px;
     border: 2px solid $color-border;
     padding-left: 29px;

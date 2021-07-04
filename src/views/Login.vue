@@ -3,11 +3,12 @@
     <header class="login__header border-bottom pv-4">
       Добавить новый аккаунт
     </header>
+    <network-login :network="selectNetwork" v-if="selectNetwork" />
     <network-list
+      v-else
       ref="networkList"
       class="login__networks"
       @change="setNetwork"
-      v-if="!selectNetwork"
     />
   </div>
 </template>
@@ -17,10 +18,11 @@ import NetworkList from "@/components/Login/network-list.vue";
 import { NetworksType } from "@/data/NETWORKS";
 import { Vue, Options } from "vue-class-component";
 import { Ref } from "vue-property-decorator";
+import NetworkLogin from "@/components/Login/network-login.vue";
 
 @Options({
   name: "login",
-  components: { NetworkList }
+  components: { NetworkLogin, NetworkList }
 })
 export default class Login extends Vue {
   selectNetwork: NetworksType | null = null;
@@ -39,7 +41,6 @@ export default class Login extends Vue {
     @include text(24px, bold);
     display: flex;
     justify-content: center;
-    border-bottom: 1px solid #7a7a7a;
   }
 }
 </style>

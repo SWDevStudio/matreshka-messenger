@@ -1,5 +1,5 @@
 <template>
-  <div class=" networks-list">
+  <div class="networks-list">
     <div
       class="networks-list__item d-flex gap-8 align-center justify-center pv-2 border-bottom"
       v-for="(network, key) in NETWORKS"
