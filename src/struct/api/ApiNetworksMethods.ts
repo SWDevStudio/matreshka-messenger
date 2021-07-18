@@ -7,7 +7,7 @@ export interface ApiNetworkMethods {
 
   fetchUser(): Promise<any>;
 
-  login(): Promise<any>;
+  login(login: string, password: string, code?: string): Promise<any>;
 
-  logout?(): Promise<any>;
+  logout(): Promise<any>;
 }
